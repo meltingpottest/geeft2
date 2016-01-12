@@ -1,9 +1,11 @@
 package com.gabrieldev.geeftdrawer;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -19,6 +21,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.gabrieldev.geeftdrawer.adapter.GeeftAdapter;
 import com.gabrieldev.geeftdrawer.model.GeeftManager;
@@ -29,7 +32,7 @@ public class MainActivity extends AppCompatActivity
 
     public RecyclerView mRecyclerView;
     public RecyclerView.Adapter mAdapter;
-    public TextView mDescription;;
+
 
 
     @Override
@@ -39,26 +42,12 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //DESCRTPTION VISIBILITY TEST/
-        mDescription  = (TextView) findViewById(R.id.geeft_description);
-
-        ImageButton donebutton = (ImageButton) findViewById(R.id.show_description);
-        donebutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mDescription.setVisibility(View.VISIBLE);
-            }
-        });
-        /////////////////////////////
-        /////////////////////////////
-
-
         mRecyclerView = (RecyclerView) findViewById(R.id.list);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         //        to define later
-        mAdapter = new GeeftAdapter(GeeftManager.getInstance().getCountries(),R.layout.new_geeft_card, this);
+        mAdapter = new GeeftAdapter(GeeftManager.getInstance().getCountries(), R.layout.new_geeft_card, this);
         mRecyclerView.setAdapter(mAdapter);
 
 
@@ -71,6 +60,16 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
+
+        //Image Buttons///////////////
+//        ImageButton likeReservation = (ImageButton) findViewById(R.id.like_reservation);
+//        likeReservation.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(MainActivity.this,"Reservation button to set", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+        //////////////////////////////
 
 
         //Navigation Drawer part/////

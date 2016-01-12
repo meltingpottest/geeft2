@@ -79,5 +79,5 @@ cardView:paddingEnd="@dimen/item_touch_helper_max_drag_scroll_per_frame"
     cardView:backgroundTint="@color/colorPrimary"
     android:layout_centerHorizontal="true"
     android:clickable="true"
-    android:src="@drawable/ic_favorite_border_white_3x"/>
+    android:src="@drawable/ic_favorite_black_24dp"/>
 </android.support.v7.widget.CardView>
