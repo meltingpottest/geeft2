@@ -1,7 +1,9 @@
 package com.gabrieldev.geeftdrawer.adapter;
 
 import android.annotation.TargetApi;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -59,6 +61,27 @@ public class GeeftAdapter extends RecyclerView.Adapter<GeeftAdapter.ViewHolder>{
             @Override
             public void onClick(View v) {
                 Toast.makeText(mContext, "Reservation button to set", Toast.LENGTH_SHORT).show();
+            }
+        });
+        //////////////////////////////
+
+        //Text Dialog/////////////////
+        viewHolder.geefterName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext); //Read Update
+                alertDialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // here you can add functions
+                    }
+                });
+
+                AlertDialog dialog = alertDialog.create();
+                dialog.setTitle(viewHolder.geefterName.getText());
+                dialog.setMessage("Some information that we can take from the facebook shared one");
+
+                dialog.show();  //<-- See This!
             }
         });
         //////////////////////////////
