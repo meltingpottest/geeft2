@@ -24,13 +24,13 @@
             android:id="@+id/geefter">
 
             <TextView
+                android:id="@+id/geefter_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:text="@string/user_name"
                 android:textColor="#666"
-                android:textSize="14sp"
-                android:id="@+id/geefter_name"/>
+                android:textSize="14sp"/>
 
             <TextView
                 android:id="@+id/timestamp"
@@ -43,10 +43,10 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/geeft_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:id="@+id/geeft_detail"
             android:layout_below="@id/geefter">
 
             <ImageView
@@ -55,7 +55,6 @@
                 android:layout_height="145dp"
                 android:backgroundTint="@android:color/darker_gray"
                 android:background="@android:color/black"
-                android:layout_alignParentTop="true"
                 android:scaleType="centerCrop"
                 />
             <LinearLayout
@@ -65,25 +64,26 @@
 
                 <TextView
                     android:id="@+id/geeft_name"
+                    android:text="Geeft name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/geeft_image"
-                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:singleLine="true"
                     android:padding="4dp"
                     android:textColor="#222"
                     android:textStyle="bold"
-                    android:textSize="20dp" />
+                    android:textSize="20sp" />
 
 
 
                 <TextView
+                    android:id="@+id/geeft_description"
+                    android:text="Geeft Description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/activity_horizontal_margin"
-                    android:text="@string/description"
                     android:textColor="#666"
                     android:textSize="14sp"
-                    android:id="@+id/geeft_description"
                     />
             </LinearLayout>
 

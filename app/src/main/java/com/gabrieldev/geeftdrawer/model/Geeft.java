@@ -9,6 +9,7 @@ import android.content.Context;
 public class Geeft {
 
     public String name;
+    public String geefter;
     public String description;
     public String imageName;
 

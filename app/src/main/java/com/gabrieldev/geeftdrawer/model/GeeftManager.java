@@ -7,7 +7,8 @@ import java.util.List;
  * Created by oldboy on 08/01/16.
  */
 public class GeeftManager {
-    private static String[] countryArray = {"Old Chair", "Tennis Balls", "FreeHand Yo-yo", "Rollerblade", "DVD reader", "Book"};
+    private static String[] geeftArray = {"Old Chair", "Tennis Balls", "FreeHand Yo-yo", "Rollerblade", "DVD reader", "Book"};
+    private static String[] geefterArray = {"Fabiola Amaya", "Ugo Okeadu", "Gabriele Vecchia", "Daniele Bracciani", "Joseph Aguilar", "Mickey Mouse"};
     private static String loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut " +
             "labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea " +
             "commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
@@ -28,12 +29,15 @@ public class GeeftManager {
         if (countries == null) {
             countries = new ArrayList<Geeft>();
 
-
-            for (String countryName : countryArray) {
+            String geeftName, geefterName;
+            for (int i = 0; i < geeftArray.length; i++) {
+                geefterName = geefterArray[i];
+                geeftName = geeftArray[i];
                 Geeft geeft = new Geeft();
-                geeft.name = countryName;
+                geeft.geefter = geefterName;
+                geeft.name = geeftName;
                 geeft.description = loremIpsum;
-                geeft.imageName = countryName.replaceAll("\\s+","").toLowerCase();
+                geeft.imageName = geeftName.replaceAll("\\s+","").toLowerCase();
                 countries.add(geeft);
             }
         }
