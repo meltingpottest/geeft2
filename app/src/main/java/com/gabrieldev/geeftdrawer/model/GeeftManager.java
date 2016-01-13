@@ -29,6 +29,7 @@ public class GeeftManager {
         if (countries == null) {
             countries = new ArrayList<Geeft>();
 
+            //in that area we associate the parameter to the layout we see
             String geeftName, geefterName;
             for (int i = 0; i < geeftArray.length; i++) {
                 geefterName = geefterArray[i];

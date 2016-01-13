@@ -56,6 +56,8 @@ public class GeeftAdapter extends RecyclerView.Adapter<GeeftAdapter.ViewHolder>{
         viewHolder.geeftDescription.setSingleLine(true);
         viewHolder.geeftDescription.setEllipsize(TextUtils.TruncateAt.END);
 
+
+        //Every listened of the card , need to initialize here
         //Image Buttons///////////////
         viewHolder.geeftReservationButton.setOnClickListener(new View.OnClickListener() {
             @Override

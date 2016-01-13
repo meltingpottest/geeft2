@@ -1,5 +1,6 @@
 package com.gabrieldev.geeftdrawer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -14,7 +15,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
+import com.gabrieldev.geeftdrawer.activities.AddGeeft;
 import com.gabrieldev.geeftdrawer.adapter.GeeftAdapter;
 import com.gabrieldev.geeftdrawer.model.GeeftManager;
 import com.github.clans.fab.FloatingActionButton;
@@ -40,23 +43,40 @@ public class MainActivity extends AppCompatActivity
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        //        to define later
+        // i define the Adapter that provide to organize in list , a RecycleView list,
+        // each CardView Object in the dataset.
         mAdapter = new GeeftAdapter(GeeftManager.getInstance().getCountries(), R.layout.new_geeft_card, this);
         mRecyclerView.setAdapter(mAdapter);
 
 
-
-        FloatingActionMenu fab = (FloatingActionMenu) findViewById(R.id.fab);
-        fab.addMenuButton(new FloatingActionButton(getApplicationContext()));
-        fab.addMenuButton(new FloatingActionButton(getApplicationContext()));
-        fab.setOnClickListener(new View.OnClickListener() {
+        //This is the floating menu button section; the button , when clicked, open a submenu
+        // that give the possibility to select the action that the user wat to do (the action button)
+        // clicked will start the associated activity.
+        FloatingActionMenu floatingActionMenu = (FloatingActionMenu) findViewById(R.id.floating_menu);
+        FloatingActionButton actionNewGeeft = (FloatingActionButton) findViewById(R.id.add_geeft_button);
+        actionNewGeeft.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
-                Snackbar.make(view, "We will add the action selector", Snackbar.LENGTH_SHORT)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Activity to 'Add Geeft' started", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(MainActivity.this, AddGeeft.class);
+//                startActivity(intent);
             }
         });
+        FloatingActionButton actionGeeftAroundMe = (FloatingActionButton) findViewById(R.id.geeft_around_me_button);
+        actionGeeftAroundMe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Activity to 'Geeft around me' started", Toast.LENGTH_SHORT).show();
+            }
+        });
+//        floatingActionMenu.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                Snackbar.make(view, "We will add the action selector", Snackbar.LENGTH_SHORT)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
 
         //Image Buttons///////////////
@@ -128,8 +148,6 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
 
         }
 
