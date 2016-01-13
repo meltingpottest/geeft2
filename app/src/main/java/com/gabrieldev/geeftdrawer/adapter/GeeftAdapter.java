@@ -50,9 +50,9 @@ public class GeeftAdapter extends RecyclerView.Adapter<GeeftAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, int i) {
         Geeft geeft = geefts.get(i);
-        viewHolder.geeftName.setText(geeft.name);
-        viewHolder.geefterName.setText(geeft.geefter);
-        viewHolder.geeftDescription.setText(geeft.description);
+        viewHolder.geeftName.setText(geeft.getName());
+        viewHolder.geefterName.setText(geeft.getGeefter());
+        viewHolder.geeftDescription.setText(geeft.getDescription());
         viewHolder.geeftDescription.setSingleLine(true);
         viewHolder.geeftDescription.setEllipsize(TextUtils.TruncateAt.END);
 

@@ -34,11 +34,11 @@ public class GeeftManager {
             for (int i = 0; i < geeftArray.length; i++) {
                 geefterName = geefterArray[i];
                 geeftName = geeftArray[i];
-                Geeft geeft = new Geeft();
-                geeft.geefter = geefterName;
-                geeft.name = geeftName;
-                geeft.description = loremIpsum;
-                geeft.imageName = geeftName.replaceAll("\\s+","").toLowerCase();
+                Geeft geeft = new Geeft(geefterName,geeftName,loremIpsum,geeftName.replaceAll("\\s+","").toLowerCase());
+                /*geeft.setGeefter(geefterName);
+                geeft.setName(geeftName);
+                geeft.setDescription(loremIpsum);
+                geeft.setImageName(geeftName.replaceAll("\\s+","").toLowerCase());*/
                 countries.add(geeft);
             }
         }
